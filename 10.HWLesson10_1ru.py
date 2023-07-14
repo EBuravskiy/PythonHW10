@@ -10,17 +10,19 @@ pets_information["Pet's age"] = pet_age
 pets_information["Pet's owner"] = pet_owner
 pets[pet_name] = pets_information
 string = ""
-if pets_information["Pet's age"] == 1 or pets_information["Pet's age"] % 10 == 1:
+age = pets_information["Pet's age"]
+if (age == 1):
     string = "год"
-if pets_information["Pet's age"] > 20 and pets_information["Pet's age"] % 10 == 1:
+elif (age > 20) and (age % 10) == 1:
     string = "год"
-elif (pets_information["Pet's age"]) > 0 and (pets_information["Pet's age"] < 5):
+elif (age > 0) and (age < 5):
     string = "года"
-elif (pets_information["Pet's age"] > 20) and (pets_information["Pet's age"] % 10 > 0) and (pets_information["Pet's age"] % 10 < 5):
+elif (age > 20) and ((age % 10) > 0) and ((age % 10) < 5):
     string = "года"
 else:
     string = "лет"
 print("Информация о питомце: ")
 information = list(pets_information.values())
-inf_of_pets = str(f'Это {information[0]} по кличке "{str(*pets.keys())}". Возраст питомца: {information[1]} {string}. Имя владельца: {information[2]}')
+inf_of_pets = str(
+    f'Это {information[0]} по кличке "{str(*pets.keys())}". Возраст питомца: {information[1]} {string}. Имя владельца: {information[2]}')
 print(inf_of_pets)
